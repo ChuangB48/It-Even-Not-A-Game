@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            habby person
+        </title>
+        <style>
+            body{
+                overflow: hidden;
+            }
+            #t{
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: xx-large;
+                color: blanchedalmond;
+            }
+            #sb{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 15%;
+                width: 40%;
+                border: 1px blanchedalmond solid;
+                border-radius: 100vh;
+                text-align: center;
+                transition: all 100ms;
+            }
+            #sb:hover{
+                width: 50%;
+            }
+            #sb span{
+                font-size: 500%;
+                color: blanchedalmond;
+            }
+        </style>
+    </head>
+    <body bgcolor="darkblue">
+        <span id="t">
+            進入三年級，心情突然變好了耶
+            <br>
+            那就聊個天吧!!!
+        </span>
+        <div id="sb" onclick="javascript: AI()">
+            <span>
+                聊天
+            </span>
+        </div>
+    </body>
+    <script>
+        function AI(){
+            location.href="AI.html";
+        }
+    </script>
+</html>

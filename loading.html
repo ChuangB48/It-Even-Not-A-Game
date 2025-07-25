@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Loading...
+        </title>
+        <style>
+            body{
+                overflow: hidden;
+            }
+            #title{
+                position: absolute;
+                top: 20vh;
+                left: 25vw;
+                height: 20vh;
+                width: 50vw;
+                border: transparent;
+            }
+            #title span{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 50%;
+                font-size: 15vh;
+                color: white;
+            }
+            #loading{
+                position: absolute;
+                top: 70vh;
+                left: 15vw;
+                height: 5vh;
+                width: 70vw;
+                border: 1px white solid;
+            }
+            #bar{
+                position: absolute;
+                top: 15%;
+                left: 1%;
+                height: 70%;
+                width: 98%;
+                background-color: white;
+                text-align: center;
+            }
+            #word{
+                font-size: 3vh;
+            }
+            #error{
+                position: absolute;
+                top: 30vh;
+                left: 30vw;
+                height: 40vh;
+                width: 40vw;
+                border: 5px white solid;
+                background-color: wheat;
+                opacity: 0;
+            }
+            #errormessage{
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: xx-large;
+            }
+            #ok{
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 10%;
+                width: 20%;
+                border: 1px blue solid;
+                border-radius: 20%;
+            }
+        </style>
+    </head>
+    <body bgcolor="black">
+        <div id="title">
+            <span>
+                Loading
+            </span>
+        </div>
+        <div id="loading">
+            <div id="bar">
+                <span id="word">
+                    loading:0%
+                </span>
+            </div>
+        </div>
+        <div id="error">
+            <span id="errormessage">
+                Unknown error
+            </span>
+            <button id="ok" onclick="javascript: cl()">
+                ok
+            </button>
+        </div>
+    </body>
+    <script>
+        let bar=document.getElementById("bar");
+        let p=0;
+        let a=window.setInterval(()=>{
+            p++;
+            bar.style.width=p.toString()+"%";
+            document.getElementById("word").innerText="loading:"+p.toString()+"%";
+            if(p>=92){
+                window.clearInterval(a);
+                error();
+            }
+        },10);
+        function error(){
+            window.setTimeout(()=>{
+                document.getElementById("error").style.opacity="1";
+            },500);
+        }
+        function cl(){
+            location.href="loading2.html";
+        }
+    </script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Loading...
+        </title>
+        <style>
+            #title{
+                position: absolute;
+                top: 20vh;
+                left: 25vw;
+                height: 20vh;
+                width: 50vw;
+                border: transparent;
+            }
+            #title span{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 50%;
+                font-size: 15vh;
+                color: white;
+            }
+            #loading{
+                position: absolute;
+                top: 70vh;
+                left: 15vw;
+                height: 5vh;
+                width: 70vw;
+                border: 1px white solid;
+            }
+            #bar{
+                position: absolute;
+                top: 15%;
+                left: 1%;
+                height: 70%;
+                width: 98%;
+                background-color: white;
+                text-align: center;
+            }
+            #word{
+                font-size: 3vh;
+            }
+            #scimg{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+            }
+            #error{
+                position: absolute;
+                top: 30vh;
+                left: 30vw;
+                height: 40vh;
+                width: 40vw;
+                border: 5px white solid;
+                background-color: wheat;
+                opacity: 0;
+            }
+            #errormessage{
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: xx-large;
+            }
+            #y{
+                position: absolute;
+                top: 60%;
+                left: 30%;
+            }
+            #n{
+                position: absolute;
+                top: 60%;
+                right: 30%;
+            }
+        </style>
+    </head>
+    <body bgcolor="black">
+        <div id="title">
+            <span>
+                Loading
+            </span>
+        </div>
+        <div id="loading">
+            <div id="bar">
+                <span id="word">
+                    loading:0%
+                </span>
+            </div>
+        </div>
+        <img src="scary.png" id="scimg">
+        <div id="error">
+            <span id="errormessage">
+                要不要吃錢都
+            </span>
+            <button id="y" onclick="javascript: cl()">
+                要
+            </button>
+            <button id="n" onclick="javascript: cl()">
+                不要
+            </button>
+        </div>
+    </body>
+    <script>
+        let bar=document.getElementById("bar");
+        let p=0;
+        let a=window.setInterval(()=>{
+            p++;
+            bar.style.width=p.toString()+"%";
+            document.getElementById("word").innerText="loading:"+p.toString()+"%";
+            if(p>=90){
+                window.clearInterval(a);
+                error();
+            }
+        },100);
+        function error(){
+            window.setTimeout(()=>{
+                document.getElementById("scimg").style.opacity="1";
+                window.setTimeout(()=>{
+                    document.getElementById("error").style.opacity="1";
+                },500);
+            },500);
+        }
+        function cl(){
+            location.href="loading3.html";
+        }
+    </script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            AI
+        </title>
+        <style>
+            body{
+                overflow: hidden;
+            }
+            #colorball{
+                position: absolute;
+                top: 200px;
+                left: 200px;
+                height: 50px;
+                width: 50px;
+                border: 1px black solid;
+                background-color: red;
+                border-radius: 50%;
+                z-index: 1;
+            }
+            #whiteball{
+                position: absolute;
+                top: 500px;
+                left: 300px;
+                height: 50px;
+                width: 50px;
+                border: 1px black solid;
+                background-color: white;
+                border-radius: 50%;
+            }
+            #desk{
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                height: 1000000000px;
+                width: 1000000000px;
+                border: 1px green solid;
+                border-radius: 30px;
+            }
+            #hole{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 55px;
+                width: 55px;
+                border: 1px green solid;
+                background-color: black;
+                border-radius: 50%;
+            }
+            #continue{
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 1px black solid;
+                background-color: aliceblue;
+            }
+        </style>
+    </head>
+    <body bgcolor="darkblue">
+        <div id="colorball"></div>
+        <div id="whiteball"></div>
+        <div id="desk"><div id="hole"></div></div>
+        <div id="continue" onclick="javascript:back()">
+            退出
+        </div>
+        <script>
+            let t=0;
+            let l=0;
+            function getRandomInt(a){
+                return Math.floor(Math.random()*a+1);
+            }
+            function poole(){
+                t=500;
+                l=300;
+                let w=window.setInterval(()=>{
+                    document.getElementById('whiteball').style.top=t.toString()+'px';
+                    document.getElementById('whiteball').style.left=l.toString()+'px';
+                    t-=3;
+                    l--;
+                    if(t<=250){
+                        dh=getRandomInt(6);
+                        dw=getRandomInt(6);
+                        t=200;
+                        l=200;
+                        let v=window.setInterval(()=>{
+                            t-=dh;
+                            l-=dw;
+                            document.getElementById('colorball').style.top=t.toString()+'px';
+                            document.getElementById('colorball').style.left=l.toString()+'px';
+                            if(t<=50||l<=50){
+                                document.getElementById('colorball').style.top='50px';
+                                document.getElementById('colorball').style.left='50px';
+                                window.clearInterval(v);
+                            }
+                        },10)
+                        window.clearInterval(w);
+                    }
+                },10);
+            }
+            window.addEventListener('click',()=>{
+                if((t===0&&l===0)||(t<=50||l<=50)){
+                    document.getElementById('whiteball').style.top='500px';
+                    document.getElementById('whiteball').style.left='300px';
+                    document.getElementById('colorball').style.top='200px';
+                    document.getElementById('colorball').style.left='200px';
+                    poole();
+                }
+            });
+            function back(){
+                location.href='class.html';
+            }
+        </script>
+    </body>
+</html>

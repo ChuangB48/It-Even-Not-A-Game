@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            AI
+        </title>
+        <style>
+            body{
+                overflow: hidden;
+            }
+            #white{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100vh;
+                width: 50vw;
+            }
+            #ws{
+                position: absolute;
+                bottom: calc(75vh + 10px);
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: xx-large;
+                color: white;
+            }
+            #whiteimg{
+                position: absolute;
+                top: calc(25vh + 10px);
+                left: 50%;
+                transform: translateX(-50%);
+                width: 30vw;
+            }
+            #black{
+                position: absolute;
+                top: 0px;
+                left: 50vw;
+                height: 100vh;
+                width: 50vw;
+            }
+            #bs{
+                position: absolute;
+                bottom: calc(75vh + 10px);
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: xx-large;
+                color: black;
+            }
+            #blackimg{
+                position: absolute;
+                top: calc(25vh + 10px);
+                left: 50%;
+                transform: translateX(-50%);
+                width: 30vw;
+            }
+        </style>
+    </head>
+    <body bgcolor="black">
+        <div id="white">
+            <span id="ws">
+                這是世界上最白的人
+            </span>
+            <img src="white.png" id="whiteimg">
+        </div>
+        <div id="black">
+            <span id="bs">
+                這是世界上最黑的人
+            </span>
+            <img src="black.png" id="blackimg">
+        </div>
+        <script>
+            window.addEventListener('click',()=>{
+                location.href='end.html';
+            })
+            window.addEventListener('keypress',()=>{
+                location.href='end.html';
+            })
+        </script>
+    </body>
+</html>

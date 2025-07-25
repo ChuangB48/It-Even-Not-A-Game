@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            AI
+        </title>
+        <style>
+            body{
+                word-wrap: break-word;
+                overflow: hidden;
+            }
+            span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                color: antiquewhite;
+                font-size: xx-large;
+            }
+            div{
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 1px black solid;
+                background-color: aqua;
+                transition: all 100ms;
+            }
+            div:hover{
+                background-color: blueviolet;
+            }
+        </style>
+    </head>
+    <body bgcolor="darkblue">
+        <span>
+            把老師和學生都抓起來，長臂猿不准抓。
+        </span>
+        <div onclick="javascript:cl()">
+            開始
+        </div>
+        <script>
+            function cl(){
+                location.href='dino.html';
+            }
+        </script>
+    </body>
+</html>

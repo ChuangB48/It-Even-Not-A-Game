@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            AI
+        </title>
+        <style>
+            body{
+                overflow: hidden;
+            }
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-80%,-50%);
+                height: auto;
+                opacity: 0;
+            }
+            #dia{
+                position: absolute;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(0%,-100%) !important;
+            }
+            #logbor{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(5%,-140%);
+                height: 30%;
+                width: 35%;
+                border: transparent;
+            }
+            #text{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                color: azure;
+                font-size: xx-large;
+            }
+            #avo{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100vh;
+                width: 100vw;
+                opacity: 0;
+            }
+            #gibig{
+                top: -50% !important;
+                left: 100% !important;
+                height: 3000px !important;
+            }
+        </style>
+    </head>
+    <body bgcolor="darkblue">
+        <img src="teacher.png" id="tea">
+        <img src="student.png" id="stu">
+        <img src="gibbon.png" id="gib">
+        <img src="gibbon.png" id="gibig">
+        <img src="dialog.png" id="dia">
+        <div id="logbor"><span id="text"></span></div>
+        <div id="avo"></div>
+        <script>
+            let a=0;
+            let tea=document.getElementById('tea');
+            let stu=document.getElementById('stu');
+            let gib=document.getElementById('gib');
+            let text=document.getElementById('text');
+            function f(){
+                if(a===1){
+                    tea.style.opacity='0';
+                    stu.style.opacity='1';
+                    gib.style.opacity='0';
+                    text.innerText='老師~~~';
+                }
+                else if(a===2){
+                    text.innerText='那有0維嗎?';
+                }
+                else if(a===3){
+                    tea.style.opacity='1';
+                    stu.style.opacity='0';
+                    gib.style.opacity='0';
+                    text.innerText='有阿';
+                }
+                else if(a===4){
+                    tea.style.opacity='0';
+                    stu.style.opacity='0';
+                    gib.style.opacity='0';
+                    text.innerText='在這裡';
+                    document.getElementById('gibig').style.opacity='1';
+                    text.style.color='black';
+                }
+                else if(a===5){
+                    tea.style.opacity='0';
+                    stu.style.opacity='1';
+                    gib.style.opacity='0';
+                    text.innerText='ㄡˊ~~~';
+                    document.getElementById('gibig').style.opacity='0';
+                    text.style.color='azure';
+                }
+                else if(a===6){
+                    tea.style.opacity='0';
+                    stu.style.opacity='0';
+                    gib.style.opacity='1';
+                    text.innerText='那有-1維嗎';
+                }
+                else if(a===7){
+                    tea.style.opacity='1';
+                    stu.style.opacity='0';
+                    gib.style.opacity='0';
+                    text.innerText='這甚至沒有。。。';
+                }
+                else if(a===8){
+                    tea.style.opacity='0';
+                    stu.style.opacity='0';
+                    gib.style.opacity='1';
+                    text.innerText='呵呵呵呵';
+                }
+                else if(a===9){
+                    tea.style.opacity='0';
+                    stu.style.opacity='1';
+                    gib.style.opacity='0';
+                    text.innerText='閉嘴辣';
+                }
+                else if(a===10){
+                    location.href='nig.html';
+                }
+            }
+            window.addEventListener('keypress',()=>{
+                a++;
+                f();
+                document.getElementById('dia').style.opacity='1';
+            });
+            window.addEventListener('click',()=>{
+                a++;
+                f();
+                document.getElementById('dia').style.opacity='1';
+            });
+        </script>
+    </body>
+</html>

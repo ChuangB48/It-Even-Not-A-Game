@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Loading...
+        </title>
+        <style>
+            body{
+                overflow: hidden;
+            }
+            #title{
+                position: absolute;
+                top: 20vh;
+                left: 25vw;
+                height: 20vh;
+                width: 50vw;
+                border: transparent;
+            }
+            #title span{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 50%;
+                font-size: 15vh;
+                color: white;
+            }
+            #loading{
+                position: absolute;
+                top: 70vh;
+                left: 15vw;
+                height: 5vh;
+                width: 70vw;
+                border: 1px white solid;
+            }
+            #bar{
+                position: absolute;
+                top: 15%;
+                left: 1%;
+                height: 70%;
+                width: 98%;
+                background-color: white;
+                text-align: center;
+            }
+            #word{
+                font-size: 3vh;
+            }
+            #scimg{
+                position: absolute;
+                top: 20vh;
+                left: 10vw;
+                height: 40vh;
+                width: 30vw;
+                opacity: 0;
+            }
+            #arror{
+                position: absolute;
+                top: 50vh;
+                left: 40vw;
+                height: 20vh;
+                width: 11vw;
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body bgcolor="black">
+        <div id="title">
+            <span>
+                Even
+            </span>
+        </div>
+        <div id="loading">
+            <div id="bar">
+                <span id="word">
+                    loading:0%
+                </span>
+            </div>
+        </div>
+        <img src="imbecile.jpg" id="scimg">
+        <img src="arrow.png" id="arror">
+    </body>
+    <script>
+        let bar=document.getElementById("bar");
+        let p=0;
+        let a=window.setInterval(()=>{
+            p++;
+            bar.style.width=p.toString()+"%";
+            document.getElementById("word").innerText="loading:"+p.toString()+"%";
+            if(p>=87){
+                window.clearInterval(a);
+                error();
+            }
+        },200);
+        function error(){
+            window.setTimeout(()=>{
+                document.getElementById("scimg").style.opacity="1";
+                o=0;
+                let a=window.setInterval(()=>{
+                    o+=0.1;
+                    document.getElementById("arror").style.opacity=o.toString();
+                    if(o>=1){
+                        window.setTimeout(()=>{
+                            location.href="lobby.html";
+                        },1500);
+                    }
+                },100);
+            },500);
+        }
+    </script>
+</html>

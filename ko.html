@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            AI
+        </title>
+        <style>
+            .ko{
+                position: absolute;
+                font-size: 40vw;
+                color: crimson;
+                opacity: 0;
+            }
+            #k{
+                left: 10%;
+            }
+            #o{
+                right: 10%;
+            }
+            #pre{
+                position: absolute;
+                font-size: xx-large;
+                color: aliceblue;
+                bottom: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        </style>
+    </head>
+    <body bgcolor="darkblue">
+        <span id="k" class="ko">K</span>
+        <span id="o" class="ko">O</span>
+        <span id="pre">按任意鍵繼續...</span>
+        <script>
+            window.setTimeout(()=>{
+                document.getElementById('k').style.opacity='1';
+            },300);
+            window.setTimeout(()=>{
+                document.getElementById('o').style.opacity='1';
+            },600);
+            window.addEventListener('click',()=>{
+                location.href='flat.html';
+            })
+        </script>
+    </body>
+</html>
